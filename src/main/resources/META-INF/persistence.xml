@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.2"
+             xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
+                      http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
+
+
+    <persistence-unit name="persistence-unit-name" transaction-type="RESOURCE_LOCAL">
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        <class>src/main/java/com/webDeveloperEmre/javafullStackwebApp/model/User.java</class>
+        <properties>
+            <property name="javax.persistence.jdbc.url" value="jdbc:mariadb://34.29.47.239:3306/userManagement"/>
+            <property name="javax.persistence.jdbc.user" value="root"/>
+            <property name="javax.persistence.jdbc.password" value="123456"/>
+            <property name="javax.persistence.jdbc.driver" value="org.mariadb.jdbc.Driver"/>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MariaDBDialect"/>
+        </properties>
+    </persistence-unit>
+
+
+
+</persistence>

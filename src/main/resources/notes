@@ -1,0 +1,33 @@
+=======================================================================================================
+01-
+In a Java Spring application,
+the configuration properties for the application can be specified in a file called
+"application.properties" or "application.yml".
+
+The properties you provided are used to configure the database connection
+and data schema migration in a Spring Boot application using Hibernate.
+
+=======================================================================================================
+02-
+"spring.jpa.hibernate.ddl-auto=update":
+This property is used to configure the behavior of Hibernate
+when it comes to creating or updating the database schema.
+
+The "update" value tells Hibernate to update the existing schema based on the entity classes and mappings in the application.
+Other possible values include "create" (to create a new schema from scratch)
+and "none" (to disable schema generation altogether).
+
+=======================================================================================================
+03-
+"spring.datasource.url=jdbc:mysql://localhost:3306/":
+This property is used to specify the URL of the MySQL database.
+
+In this example, the database is assumed to be running locally on the default port 3306.
+The value "jdbc:mysql://" specifies the JDBC driver for MySQL
+
+=======================================================================================================
+04-
+spring.jpa.show-sql=true
+is a configuration property in Spring Boot that enables the logging of SQL statements executed by Hibernate.
+When this property is set to true,
+Hibernate will log to the console all SQL statements it generates and executes during the application runtime.
