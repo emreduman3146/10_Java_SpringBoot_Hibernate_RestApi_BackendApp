@@ -29,6 +29,7 @@ public class UserController {
     @GetMapping("/getAllUsers")      //localhost:8080/userManagement/getAllUsers
     public List<User> getAllUsers()
     {
+        //SELECT * FROM USER;
         return  userRepository.findAll();
         //RESTAPI get request yapar -> JAVA -> SQL Query -> JAVA -> JSON DATA
     }
@@ -42,13 +43,14 @@ public class UserController {
     public User getUserById(@PathVariable Long id)
     {
         return userRepository.findById(id).orElseThrow(()->new UserNotFoundException(id));
-        //SELECT * FROM table_name WHERE id = 1; ELSE throw exception
+        //SELECT * FROM table_name WHERE id = 4; ELSE throw exception
+
     }
 
     @PostMapping("/postUser")
     private List<Object> addAUser(@RequestBody User user)
     {
-        userRepository.save(user);//INSERT INTO user (name, username, email) VALUES ('John Doe', 'johndoe', 'johndoe@example.com');
+        userRepository.save(user);//INSERT INTO user (id,name, username, email) VALUES (19,'John Doe', 'johndoe', 'johndoe@example.com');
 
         List<Object> requestBody_Message=new ArrayList<>();
         requestBody_Message.add(userRepository.findById(user.getId()));
@@ -80,7 +82,7 @@ public class UserController {
                         return userRepository.save(newUser);
                     });
 
-                   //.orElseThrow(()->new UserNotFoundException(id));
+        //.orElseThrow(()->new UserNotFoundException(id));
     }
 
 

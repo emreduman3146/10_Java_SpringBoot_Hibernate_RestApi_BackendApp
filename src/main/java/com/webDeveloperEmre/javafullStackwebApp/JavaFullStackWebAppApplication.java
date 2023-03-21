@@ -8,7 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class JavaFullStackWebAppApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(JavaFullStackWebAppApplication.class, args);
+		SpringApplication.run(JavaFullStackWebAppApplication.class, args);//mvn spring-boot:run
 	}
 
 }
